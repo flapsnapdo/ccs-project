@@ -1,17 +1,15 @@
-//
-//  CSSApp.swift
-//  CSS
-//
-//  Created by Алимахова Лейла on 11/7/26.
-//
-
 import SwiftUI
 
 @main
 struct CSSApp: App {
+    @StateObject private var sessionManager = SessionManager()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environmentObject(sessionManager)
+                .tint(AppTheme.accent)
+                .preferredColorScheme(.dark)
         }
     }
 }
